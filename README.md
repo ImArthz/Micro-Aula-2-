@@ -1,24 +1,18 @@
 # Relatório de Atividades - Laboratório de Microcontroladores e Microprocessadores  
 **Aula 02 — Construção de Circuitos com Entradas e Saídas Digitais no Arduino**  
 
-  
-<div align="center" style="background-color: #f0f0f0; padding: 20px; border-radius: 10px;">
-  <h2 style="color: #0366d6;"> Nome da Dupla</h2>
-  <p><strong style="font-size: 18px;">Arthur Mendonça</strong></p>
-  <p>
-    <a href="https://github.com/ImArthz" target="_blank">
-      <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="ImArthz" height="40" width="40" style="margin: 0 10px;" />
-    </a>
-    <p><strong style="font-size: 18px;">Álvaro Silva</strong></p>
-    <a href="https://github.com/alvaroajs" target="_blank">
-      <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="ImArthz" height="40" width="40" style="margin: 0 10px;" />
-    </a>
-  </p>
+---
+
+## 👥 Nome da Dupla  
+
+<div align="center">
+
+| **Arthur Mendonça** | **Álvaro Silva** |
+|:-------------------:|:-----------------:|
+| [![GitHub Arthur](https://img.shields.io/badge/GitHub-Arthur_Mendonça-239A3B?style=for-the-badge&logo=github)](https://github.com/ImArthz) | [![GitHub Álvaro](https://img.shields.io/badge/GitHub-Álvaro_Silva-239A3B?style=for-the-badge&logo=github)](https://github.com/alvaroajs) |  
+
 </div>
 
-
-
-----------------------------------------
 
 ## Exercício 1: Hello World com Arduino  
 
@@ -53,7 +47,7 @@ O LED conectado ao pino digital 13 do Arduino é acionado (HIGH) por 1 segundo e
 </div>
 
 ### Link para o Projeto no Wokwi:  
-https://wokwi.com/projects/429127490644502529  
+[![Projeto 1 - Hello World](https://img.shields.io/badge/Wokwi-Projeto_1-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/429127490644502529)
 
 ----------------------------------------
 
@@ -120,7 +114,7 @@ void loop() {
 </div>
 
 ### Link para o Projeto no Wokwi:  
-https://wokwi.com/projects/429612069389450241  
+[![Projeto 2 - LEDs e Botões](https://img.shields.io/badge/Wokwi-Projeto_2-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/429612069389450241)
 
 ----------------------------------------
 
@@ -189,7 +183,7 @@ Para exibir o número **9** em um display de 7 segmentos (catodo comum):
 ---
 
 ### Link para o Projeto no Wokwi:  
-🔗 [Clique aqui para simular o projeto](https://wokwi.com/projects/429618760874076161)  
+[![Projeto 3 - Display de 7 Segmentos](https://img.shields.io/badge/Wokwi-Projeto_3-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/429618760874076161)
 
 ---
 
