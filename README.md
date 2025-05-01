@@ -11,7 +11,8 @@
 
 | **Alunos** | **Professor** |
 |:----------:|:-------------:|
-| [![GitHub Arthur](https://img.shields.io/badge/Arthur_Mendonça-239A3B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ImArthz)<br>[![GitHub Álvaro](https://img.shields.io/badge/Álvaro_Silva-239A3B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/alvaroajs) | [![GitHub Diego](https://img.shields.io/badge/Prof._Diego_Ascanio-00599C?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DiegoAscanio) |
+| <a href="https://github.com/ImArthz"><img src="https://github.com/ImArthz.png" width="100" style="border-radius: 50%; box-shadow: 0 0 8px #239A3B; border: 2px solid #239A3B"></a><br>**Arthur Mendonça**<br>[![GitHub](https://img.shields.io/badge/Ver_Repositórios-239A3B?style=flat-square&logo=github)](https://github.com/ImArthz) | <a href="https://github.com/DiegoAscanio"><img src="https://github.com/DiegoAscanio.png" width="100" style="border-radius: 50%; box-shadow: 0 0 8px #00599C; border: 2px solid #00599C"></a><br>**Prof. Diego Ascanio**<br>[![GitHub](https://img.shields.io/badge/Ver_Repositórios-00599C?style=flat-square&logo=github)](https://github.com/DiegoAscanio) |
+| <a href="https://github.com/alvaroajs"><img src="https://github.com/alvaroajs.png" width="100" style="border-radius: 50%; box-shadow: 0 0 8px #239A3B; border: 2px solid #239A3B"></a><br>**Álvaro Silva**<br>[![GitHub](https://img.shields.io/badge/Ver_Repositórios-239A3B?style=flat-square&logo=github)](https://github.com/alvaroajs) | |
 
 </div>
 
