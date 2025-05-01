@@ -307,8 +307,6 @@ void loop() {
    - Atualiza o número imediatamente após o pressionamento.  
 
 ---  
-
-### Demonstração Visual:  
 ### Demonstração Visual:  
 <div align="center">
   <img src="docs/imgs/projeto 4 img.png" 
