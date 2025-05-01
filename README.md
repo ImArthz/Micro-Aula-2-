@@ -7,9 +7,11 @@
 
 <div align="center">
 
-| **Arthur Mendonça** | **Álvaro Silva** |
-|:-------------------:|:-----------------:|
-| [![GitHub Arthur](https://img.shields.io/badge/GitHub-Arthur_Mendonça-239A3B?style=for-the-badge&logo=github)](https://github.com/ImArthz) | [![GitHub Álvaro](https://img.shields.io/badge/GitHub-Álvaro_Silva-239A3B?style=for-the-badge&logo=github)](https://github.com/alvaroajs) |  
+### 👥 Equipe do Projeto
+
+| **Alunos** | **Professor** |
+|:----------:|:-------------:|
+| [![GitHub Arthur](https://img.shields.io/badge/Arthur_Mendonça-239A3B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ImArthz)<br>[![GitHub Álvaro](https://img.shields.io/badge/Álvaro_Silva-239A3B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/alvaroajs) | [![GitHub Diego](https://img.shields.io/badge/Prof._Diego_Ascanio-00599C?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DiegoAscanio) |
 
 </div>
 
@@ -41,6 +43,13 @@ O LED conectado ao pino digital 13 do Arduino é acionado (HIGH) por 1 segundo e
 <div align="center">
   <img src="docs/imgs/HelloWorld_atv_1.gif" 
        alt="Execução do circuito Hello World" 
+       width="600">
+  <br>
+  <em>Circuito Hello World: LED piscando no Arduino .</em>
+</div>
+<div align="center">
+  <img src="docs/imgs/projeto 1 img.png" 
+       alt="circuito Hello World" 
        width="600">
   <br>
   <em>Circuito Hello World: LED piscando no Arduino .</em>
@@ -112,6 +121,14 @@ void loop() {
   <br>
   <em>Funcionamento do circuito: alternância de LEDs controlada por botões.</em>
 </div>
+### Demonstração Visual:  
+<div align="center">
+  <img src="docs/imgs/projeto 2 img.png" 
+       alt="Circuito com LEDs e botões" 
+       width="600">
+  <br>
+  <em> Circuito: alternância de LEDs controlada por botões.</em>
+</div>
 
 ### Link para o Projeto no Wokwi:  
 [![Projeto 2 - LEDs e Botões](https://img.shields.io/badge/Wokwi-Projeto_2-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/429612069389450241)
@@ -179,6 +196,13 @@ Para exibir o número **9** em um display de 7 segmentos (catodo comum):
   <br>
   <em>Circuito em funcionamento: número 9 no display de 7 segmentos.</em>
 </div>
+<div align="center">
+  <img src="docs/imgs/projeto 3 img.png" 
+       alt="Display mostrando o número 9" 
+       width="400">
+  <br>
+  <em>Circuito número 9 no display de 7 segmentos.</em>
+</div>
 
 ---
 
@@ -189,3 +213,118 @@ Para exibir o número **9** em um display de 7 segmentos (catodo comum):
 
 ### Observações:  
 - **Resistores:** Os resistores de 330Ω são usados para limitar a corrente nos segmentos do display.  
+# Exercício 4: Contador com Display de 7 Segmentos e Botões  
+
+### Objetivo:  
+Implementar um contador de 0 a 9 usando um display de 7 segmentos e dois botões. Um botão incrementa o valor e o outro decrementa, com a contagem sendo exibida em tempo real.  
+
+---
+
+### Componentes Principais:  
+- Display de 7 segmentos (catodo comum)  
+- 7 resistores de 330Ω (para os segmentos)  
+- 2 botões  
+- 2 resistores de 10kΩ (pull-down para botões)  
+- Arduino Uno  
+
+---
+
+### Código:  
+```cpp
+int pin[] = {0, 1, 2, 3, 4, 5, 6}; // Segmentos a-g
+int botaoIncrementa = 8;
+int botaoDecrementa = 9;
+int contador = 0;
+
+// Configuração dos segmentos para cada número (catodo comum)
+byte numeros[10][7] = {
+  {1,1,1,1,1,1,0}, // 0 (segmento G desligado)
+  {0,1,1,0,0,0,0}, // 1
+  {1,1,0,1,1,0,1}, // 2
+  {1,1,1,1,0,0,1}, // 3
+  {0,1,1,0,0,1,1}, // 4
+  {1,0,1,1,0,1,1}, // 5
+  {1,0,1,1,1,1,1}, // 6
+  {1,1,1,0,0,0,0}, // 7
+  {1,1,1,1,1,1,1}, // 8
+  {1,1,1,1,0,1,1}  // 9
+};
+
+unsigned long ultimoDebounce = 0;
+unsigned long debounceDelay = 50;
+
+void setup() {
+  for (int i = 0; i < 7; i++) {
+    pinMode(pin[i], OUTPUT);
+  }
+  pinMode(botaoIncrementa, INPUT_PULLUP); // Usa resistor interno PULLUP
+  pinMode(botaoDecrementa, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void mostrarNumero(int numero) {
+  for (int i = 0; i < 7; i++) {
+    digitalWrite(pin[i], numeros[numero][i]);
+  }
+  Serial.print("Contador: ");
+  Serial.println(numero);
+}
+
+void loop() {
+  int leituraIncrementa = digitalRead(botaoIncrementa);
+  int leituraDecrementa = digitalRead(botaoDecrementa);
+
+  // Debounce para botão de incremento
+  if (leituraIncrementa == LOW) { // Botão pressionado (LOW com PULLUP)
+    if (millis() - ultimoDebounce > debounceDelay) {
+      contador++;
+      if (contador > 9) contador = 0;
+      mostrarNumero(contador);
+      ultimoDebounce = millis();
+    }
+  }
+
+  // Debounce para botão de decremento
+  if (leituraDecrementa == LOW) {
+    if (millis() - ultimoDebounce > debounceDelay) {
+      contador--;
+      if (contador < 0) contador = 9;
+      mostrarNumero(contador);
+      ultimoDebounce = millis();
+    }
+  }
+}
+```
+### Funcionamento:  
+1. Botão de Incremento (Pino 8):  
+   - Aumenta o contador em 1.  
+   - Ao chegar em 9, volta para 0.  
+2. Botão de Decremento (Pino 9):  
+   - Diminui o contador em 1.  
+   - Ao chegar em 0, volta para 9.  
+3. Display:  
+   - Atualiza o número imediatamente após o pressionamento.  
+
+---  
+
+### Demonstração Visual:  
+### Demonstração Visual:  
+<div align="center">
+  <img src="docs/imgs/projeto 4 img.png" 
+       alt="Display que mostra de 0 até 9" 
+       width="400">
+  <br>
+  <em>Circuito contador ate 9 no display de 7 segmentos.</em>
+</div>  
+
+---  
+
+### Link para o Projeto no Wokwi:  
+[![Projeto 4 - Display de 7 Segmentos com contador](https://img.shields.io/badge/Wokwi-Projeto_4-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://wokwi.com/projects/429618760874076161)  
+
+---  
+
+### Observações:  
+- Debounce: Implementado com millis() para evitar leituras múltiplas.  
+- Lógica do Display: A matriz "numeros" define os segmentos ativos para cada dígito.  
+- Resistores: 10kΩ garantem estados estáveis nos botões.  
